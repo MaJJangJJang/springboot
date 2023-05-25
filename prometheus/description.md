@@ -1,13 +1,13 @@
 # Spring Boot + Prometheus Monitoring
 
-## 1. Frame만들기
+### 1. Frame만들기
 * [start.spring.io](start.sping.io) 에서 진행  
   
-## 2. 필요한 의존성 추가하기
+### 2. 필요한 의존성 추가하기
 * Spring Web, Prometheus, Spring Boot Actuator
 ![start.spring.io 화면](../png/prometheus/springboot_create.png)
 
-## 3. MainConroller.java  
+### 3. MainConroller.java  
 * ./src/main/java/com/monitoring/prometheus/conroller/MainController.java
 ```
 package com.monitoring.prometheus.controller;
@@ -39,7 +39,7 @@ public class MainController {
 		}
 }
 ```  
-## 4. ./src/main/resources/application.yml
+### 4. ./src/main/resources/application.yml
 * 코드수정  
 ```
 spring:
@@ -63,12 +63,12 @@ management:
         application: ${spring.application.name}
 ```
 
-## 5. 실행
+### 5. 실행
 ```
 ./gradlew
 ```
 
-## 6. 결과
+### 6. 결과
 - Test시 포트포워딩을 통해 7070으로 진행했습니다.  
 Default Port는 8080 이오니 참고바랍니다.  
 
