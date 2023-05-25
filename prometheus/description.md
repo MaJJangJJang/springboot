@@ -63,5 +63,22 @@ management:
         application: ${spring.application.name}
 ```
 
+## 5. 실행
+```
+./gradlew
+```
+
+## 6. 결과
+- Test시 포트포워딩을 통해 7070으로 진행했습니다.  
+Default Port는 8080 이오니 참고바랍니다.  
+
+- 접속화면  
+[http://localhost:8080/](http://localhost:8080)
+![첫화면](../png/prometheus/main.png)
+- Metric 화면  
+[http://localhost:8080/actuator/prometheus](http://localhost:8080/actuator/prometheus)
+![Metric화면](../png/prometheus/metric.png)
+
+
 ### Reference
 [https://blog.bespinglobal.com/post/springboot-prometheus-grafana%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-monitoring-%EA%B5%AC%EC%B6%95/](https://blog.bespinglobal.com/post/springboot-prometheus-grafana%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-monitoring-%EA%B5%AC%EC%B6%95/)
