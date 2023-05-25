@@ -10,7 +10,7 @@
 3. ./src/main/resources/application.yml
 * 코드수정  
 ```
-  spring:
+spring:
   application:
     name: monitoring
 
