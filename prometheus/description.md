@@ -79,6 +79,30 @@ Default Port는 8080 이오니 참고바랍니다.
 [http://localhost:8080/actuator/prometheus](http://localhost:8080/actuator/prometheus)
 ![Metric화면](../png/prometheus/metric.png)
 
+### 부록 : Prometheus설치
+- ./prometheus_yaml 실행  
+
+- 01-proemetheus-SA.yaml  
+: Prometheus 동작에 필요한 SA 생성  
+
+- 02-prometheus-clusterrole.yaml  
+: Cluster 단위의 Role 생성  
+: Cluster 단위인 이유는 동일한 App이 여러개 올라갈 시 Target을 쉽게 설정하기 위한 설정이다.  
+
+- 03-prometheus-clusterrolebinding.yaml  
+: SA에 Cluster Role 연결  
+
+- 04-prometheus-config.yaml  
+: Prometheus 설정파일
+
+- 05-prometheus-deploy.yaml  
+: Prometheus 배포  
+
+- 결과  
+Application에 대한 Metric을 확인 할 수 있었음
+![prometheus_result](../png/prometheus/prometheus_result.png)
+
+
 
 ### Reference
 [https://blog.bespinglobal.com/post/springboot-prometheus-grafana%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-monitoring-%EA%B5%AC%EC%B6%95/](https://blog.bespinglobal.com/post/springboot-prometheus-grafana%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-monitoring-%EA%B5%AC%EC%B6%95/)
