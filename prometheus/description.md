@@ -65,8 +65,11 @@ management:
 
 ### 5. 실행
 ```
-./gradlew
+./gradlew build
+java -jar ./build/libs/{name}.jar
 ```
+![jar 실행화면](../png/prometheus/start_jar.png)  
+
 
 ### 6. 결과
 - Test시 포트포워딩을 통해 7070으로 진행했습니다.  
@@ -79,7 +82,33 @@ Default Port는 8080 이오니 참고바랍니다.
 [http://localhost:8080/actuator/prometheus](http://localhost:8080/actuator/prometheus)
 ![Metric화면](../png/prometheus/metric.png)
 
-### 부록 : Prometheus설치
+### 부록1 : Dockerfile Build 하기  
+- Dockerfile 파일생성
+```
+# Base image
+FROM openjdk:17-alpine
+
+# Working directory
+WORKDIR /app
+
+# Copy the compiled Java application JAR file
+COPY ./prometheus/build/libs/webapp-for-prometheus-0.0.1-SNAPSHOT.jar /app/my-application.jar
+
+# Expose the port
+EXPOSE 8080
+
+# Command to run the Java application
+CMD ["java", "-jar", "my-application.jar"]
+```
+
+- Docker Image 만들기  
+```
+docker build -t {repo}/{app}:{ver}
+```
+
+
+
+### 부록2 : Prometheus설치
 - ./prometheus_yaml 실행  
 
 - 01-proemetheus-SA.yaml  
